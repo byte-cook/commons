@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<command-definition>
+	<command>/usr/bin/javac</command>
+	<param id="properties">-D{0}={1}</param>
+	<param>--debug</param>
+	<param id="classpath">-cp {0}</param>
+	<param id="src">{*}</param>
+	<env id="proxy">
+		<key>{0}</key>
+		<value>{1}</value>
+	</env>
+	<env>
+		<key>proxy.port</key>
+		<value>8080</value>
+	</env>
+</command-definition>

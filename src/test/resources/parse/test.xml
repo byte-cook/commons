@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<memos default="build" name="cnsFaces" basedir=".">
+	<!-- Target definitions -->
+	<memo name="Test&amp;Name1" category="TestCat1">
+		text&amp;text
+	</memo>
+	<memo name="TestName2" category="TestCat1">
+		test
+	</memo>
+	<memo name="TestName3" category="TestCat1"/>
+</memos>
+
