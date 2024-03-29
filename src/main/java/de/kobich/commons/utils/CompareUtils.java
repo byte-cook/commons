@@ -17,4 +17,25 @@ public class CompareUtils {
 		}
 		return false;
 	}
+	
+	/**
+	 * Compares two objects
+	 * @param <T>
+	 * @param c1
+	 * @param c2
+	 * @param nullIsGreater true if compare(null, non-null) should return 1
+	 * @return
+	 */
+	public static <T extends Comparable<T>> int compare(T c1, T c2, boolean nullIsGreater) {
+		if (c1 != null && c2 != null) {
+			return c1.compareTo(c2);
+		}
+		else if (c1 != null) {
+			return nullIsGreater ? -1 : 1;
+		}
+		else if (c2 != null) {
+			return nullIsGreater ? 1 : -1;
+		}
+		return 0;
+	}
 }
