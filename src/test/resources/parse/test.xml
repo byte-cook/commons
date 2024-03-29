@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<memos default="build" name="cnsFaces" basedir=".">
+<memos default="build" name="test" basedir=".">
 	<!-- Target definitions -->
 	<memo name="Test&amp;Name1" category="TestCat1">
 		text&amp;text
