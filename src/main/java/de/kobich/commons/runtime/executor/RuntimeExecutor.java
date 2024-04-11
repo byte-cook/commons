@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import de.kobich.commons.utils.StringUtils;
-
 /**
  * Execute service.
  * @author ckorn
@@ -17,7 +15,7 @@ public class RuntimeExecutor implements IExecutor {
 	@Override
 	public void executeCommand(ExecuteRequest request) throws IOException, InterruptedException {
 		List<String> command = request.getCommand();
-		String commandAsString = StringUtils.join(command.toArray(), " ");
+		String commandAsString = String.join(" ", command.toArray(new String[command.size()]));
 		logger.info("Command: " + command);
 
 		Runtime runtime = Runtime.getRuntime();

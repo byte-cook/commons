@@ -1,5 +1,6 @@
 package de.kobich.commons.utils;
 
+import org.apache.commons.lang3.StringUtils;
 
 public class EscapeUtils {
 	/**
@@ -10,7 +11,7 @@ public class EscapeUtils {
 	 */
 	@Deprecated
 	public static String escapeSearchText(String text) {
-		if (StringUtils.hasText(text)) {
+		if (StringUtils.isNoneBlank(text)) {
 			text = text.replace("*", "%");
 			text = text.replace("?", "_");
 		}

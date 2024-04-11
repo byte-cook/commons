@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 
 import de.kobich.commons.runtime.executor.process.ExecutionProcess;
 import de.kobich.commons.runtime.executor.process.IExecutionProcessRegistry;
-import de.kobich.commons.utils.StringUtils;
 
 /**
  * Execute service.
@@ -20,7 +19,7 @@ public class Executor implements IExecutor {
 	@Override
 	public void executeCommand(ExecuteRequest request) throws IOException, InterruptedException {
 		List<String> command = request.getCommand();
-		String commandAsString = StringUtils.join(command.toArray(), " ");
+		String commandAsString = String.join(" ", command.toArray(new String[command.size()]));
 		logger.info("Command: " + commandAsString);
 
 		ProcessBuilder processBuilder = new ProcessBuilder(command);

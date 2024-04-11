@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import de.kobich.commons.Reject;
@@ -34,12 +35,12 @@ public class FileFinderUtils {
 	public static File findFile(String homeSubFolder, String workingSubFolder, List<String> fileNames) {
 		List<File> dirs = new ArrayList<File>();
 		String userHome = System.getProperty("user.home");
-		if (!StringUtils.isEmpty(homeSubFolder)) {
+		if (StringUtils.isNotBlank(homeSubFolder)) {
 			userHome += File.separator + homeSubFolder;
 		}
 		dirs.add(new File(userHome));
 		String workingDir = System.getProperty("user.dir");
-		if (!StringUtils.isEmpty(workingSubFolder)) {
+		if (StringUtils.isNotBlank(workingSubFolder)) {
 			workingDir += File.separator + workingSubFolder;
 		}
 		dirs.add(new File(workingDir));
