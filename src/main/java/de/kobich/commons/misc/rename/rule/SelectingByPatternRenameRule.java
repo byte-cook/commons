@@ -15,7 +15,8 @@ import de.kobich.commons.misc.rename.RenameFilterChain;
 
 
 /**
- * Selects a part to rename.
+ * Selects a part to rename. 
+ * <p>E.g. for file "file01.txt" use the pattern "file<1>.txt" and targetVariable "<1>" to change only the number part of the file.
  * @author ckorn
  */
 public class SelectingByPatternRenameRule implements IRenameRule {
