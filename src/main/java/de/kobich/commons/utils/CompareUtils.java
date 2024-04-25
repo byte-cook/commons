@@ -1,5 +1,6 @@
 package de.kobich.commons.utils;
 
+import javax.annotation.Nullable;
 
 public class CompareUtils {
 	/**
@@ -8,7 +9,7 @@ public class CompareUtils {
 	 * @param o2
 	 * @return
 	 */
-	public static boolean equals(Object o1, Object o2) {
+	public static boolean equals(@Nullable Object o1, @Nullable Object o2) {
 		if (o1 == null && o2 == null) {
 			return true;
 		}
@@ -26,7 +27,7 @@ public class CompareUtils {
 	 * @param nullIsGreater true if compare(null, non-null) should return 1
 	 * @return
 	 */
-	public static <T extends Comparable<T>> int compare(T c1, T c2, boolean nullIsGreater) {
+	public static <T extends Comparable<T>> int compare(@Nullable T c1, @Nullable T c2, boolean nullIsGreater) {
 		if (c1 != null && c2 != null) {
 			return c1.compareTo(c2);
 		}
